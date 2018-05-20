@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zelenina</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/style.css"
+          th:href="${'../css/style.css'}"/>
+</head>
+<body>
+    <div class="hlavicka">
+            <p>Dnes je:</p>
+    <h1>KOUZELNÁ&nbsp;&nbsp; ZAHRÁDKA</h1>
+    <button class="tlacitko"><a href="#">Zahradní kalkulačka</a></button>
+
+    
+    </div>
+
+    <ul>
+        <li th:each="plodina : ${seznam}"><img src="../../static/images/dyne.jpg" th:src="${'../images/' + plodina.obrazek +'.jpg'}" th:alt="${plodina.nazev}" ><span th:text="${plodina.nazev}">Rajce</span></li>
+
+        <!--/* -->
+
+        <li><img src="../../static/images/slunecnice.jpg" alt="Slunecnice"><span>Slunečnice</span></li>
+        <li><img src="../../static/images/koukol.jpg" alt="Koukol"><span>Koukol polni</span></li>
+        <li><img src="../../static/images/snezenka.jpg" alt="Sněženka"><span>Sněženka</span></li>
+        <li><img src="../../static/images/lilek.jpg" alt="Lilek"><span>Lilek</span></li>
+        <li><img src="../../static/images/petrzel.jpg" alt="Petržel"><span>Petržel</span></li>
+        <li><img src="../../static/images/ruze.jpg" alt="Růže"><span>Růže</span></li>
+        <li><img src="../../static/images/rajce.jpg" alt="Rajče"><span>Rajče</span></li>
+        <li><img src="../../static/images/meloun.jpg" alt="Meloun"><span>Meloun</span></li>
+
+        <!--*/-->
+
+    </ul>
+</body>
+</html>
