@@ -57,6 +57,7 @@ public class HlavniController {
         Month mesicSklizne = vyplnenyFormular.getMesicSklizeni();
         List<String> typPlodiny = vyplnenyFormular.getTypPlodiny();
         List<String> vybraneBarvy = vyplnenyFormular.getBarva();
+        String zprava;
        
         
         for (Plodina jednaPlodina : seznamPlodin) {
@@ -66,20 +67,15 @@ public class HlavniController {
                 for (String typ: typPlodiny) {
                     
                     if (typ.equals(jednaPlodina.getTypPlodiny())) {
-
-                        if (jednaPlodina.getTypPlodiny().equals("kytka")) {
-
+                        
+                        if (jednaPlodina instanceof Kytka)  {
                             
-
                             for (String barva: vybraneBarvy) {
 
                                 if (barva.equals(((Kytka)jednaPlodina).getBarva())){
                                     vybranePlodiny.add(jednaPlodina);
                                 }
                             }
-
-
-                            //vybranePlodiny.add(jednaPlodina);
 
 
                         }  else {
@@ -91,8 +87,18 @@ public class HlavniController {
         }
 
             ModelAndView drzakNaData = new ModelAndView("plodiny-vybrane");
+
+        if (vybranePlodiny.isEmpty()) {
+            drzakNaData.addObject("zprava", "Bohužel nic se nenašlo :(");
             drzakNaData.addObject("seznam", vybranePlodiny);
             drzakNaData.addObject("dnes", LocalDate.now());
+        } else {
+            drzakNaData.addObject("zprava", "Co budeš sklízet podle výběru?");
+            drzakNaData.addObject("seznam", vybranePlodiny);
+            drzakNaData.addObject("dnes", LocalDate.now());
+            
+        }
+
             return drzakNaData;
 
     }

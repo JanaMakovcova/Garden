@@ -17,7 +17,7 @@
             <h1>KOUZELNÁ&nbsp;&nbsp; ZAHRÁDKA</h1>
             <p class="dnes">DNES JE: <span th:text="${#temporals.format(dnes,'dd.MMMM yyyy')}">22.05.1018</span></p>
     <button class="tlacitko"><a href="formular.html">ZAHRADNÍ KALKULAČKA</a></button>
-    <p class="sazet">Co budeš sklízet podle výběru měsíce?</p>
+    <p class="sazet" th:text="${zprava}">Co budeš sklízet podle výběru měsíce?</p>
     </div>
 
     <ul>

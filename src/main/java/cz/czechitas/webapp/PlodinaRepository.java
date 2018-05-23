@@ -52,6 +52,22 @@ public class PlodinaRepository {
     }
 
     private Plodina clone(Plodina puvodni) {
+       if (puvodni instanceof Kytka) {
+           
+           Kytka kytkaPuvodni = (Kytka)puvodni;
+           return new Kytka(
+                   kytkaPuvodni.getId(),
+                   kytkaPuvodni.getTypPlodiny(),
+                   kytkaPuvodni.getNazev(),
+                   kytkaPuvodni.getObrazek(),
+                   kytkaPuvodni.getZacatekSazeni(),
+                   kytkaPuvodni.getKonecSazeni(),
+                   kytkaPuvodni.getDobaRustu(),
+                   kytkaPuvodni.getZacatekSlizne(),
+                   kytkaPuvodni.getKoncecSklizne(),
+                   kytkaPuvodni.getBarva());
+
+       } else
         return new Plodina(
                 puvodni.getId(),
                 puvodni.getTypPlodiny(),
@@ -63,6 +79,23 @@ public class PlodinaRepository {
                 puvodni.getZacatekSlizne(),
                 puvodni.getKoncecSklizne());
     }
+    /**
+    private Kytka clone(Kytka kytkaPuvodni) {
+        
+            return new Kytka(
+                    kytkaPuvodni.getId(),
+                    kytkaPuvodni.getTypPlodiny(),
+                    kytkaPuvodni.getNazev(),
+                    kytkaPuvodni.getObrazek(),
+                    kytkaPuvodni.getZacatekSazeni(),
+                    kytkaPuvodni.getKonecSazeni(),
+                    kytkaPuvodni.getDobaRustu(),
+                    kytkaPuvodni.getZacatekSlizne(),
+                    kytkaPuvodni.getKoncecSklizne(),
+                    kytkaPuvodni.getBarva());
+
+    }
+     **/
 
 
 }
