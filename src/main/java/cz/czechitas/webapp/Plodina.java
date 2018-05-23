@@ -5,6 +5,7 @@ import java.time.*;
 public class Plodina {
 
     private Long id;
+    private String typPlodiny;
     private String nazev;
     private String obrazek;
     private Month zacatekSazeni;
@@ -17,8 +18,9 @@ public class Plodina {
 
     }
 
-    public Plodina(Long id, String nazev, String obrazek, Month zacatekSazeni, Month konecSazeni, int dobaRustu, Month zacatekSlizne, Month koncecSklizne) {
+    public Plodina(Long id, String typPlodiny, String nazev, String obrazek, Month zacatekSazeni, Month konecSazeni, int dobaRustu, Month zacatekSlizne, Month koncecSklizne) {
         this.id = id;
+        this.typPlodiny = typPlodiny;
         this.nazev = nazev;
         this.obrazek = obrazek;
         this.zacatekSazeni = zacatekSazeni;
@@ -34,6 +36,14 @@ public class Plodina {
 
     public void setId(Long newValue) {
         id = newValue;
+    }
+
+    public String getTypPlodiny() {
+        return typPlodiny;
+    }
+
+    public void setTypPlodiny(String newValue) {
+        typPlodiny = newValue;
     }
 
     public String getNazev() {
@@ -91,4 +101,6 @@ public class Plodina {
     public void setKoncecSklizne(Month newValue) {
         koncecSklizne = newValue;
     }
+
+
 }

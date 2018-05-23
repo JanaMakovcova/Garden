@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/style1.css"
+          th:href="${'css/style1.css'}"/>
+    
+    <title>Formulář</title>
+</head>
+
+<body>
+    <form  method="post">
+<div class="hlavicka">
+    
+        <h1>Vyber si rostlinu</h1>
+
+        <p>Už víš, jakou rostlinku si zasadíš? My ti rádi poradíme! Vyber si měsíc, ve kterém chceš sklízet zeleninku nebo,
+            ve kterém měsíci ti květinky vykvetou. V dalším kroku se musíš rozhodnou, jestli chceš pěstovat jen pro okrasu
+            krásné kytičky nebo si zasadit nějakou zeleninu, kterou si sám vypěstuješ a pak sníš. U květin se ti zobrazí
+            i možnost výběru barvy. A to je celé. Ať ti to roste! :)
+        </p>
+    </div>
+        <div id="kontejner">
+
+            <div class="mesice">
+                <label for="roletka">Vyber si měsíc měsíc</label>
+                <select name="mesicSklizeni" id="mesice">
+                    <option value="JANUARY">Leden</option>
+                    <option value="FEBRUARY">Únor</option>
+                    <option value="MARCH" selected>Březen</option>
+                    <option value="APRIL">Duben</option>
+                    <option value="MAY">Květen</option>
+                    <option value="JUNE">Červen</option>
+                    <option value="JULY">Červenec</option>
+                    <option value="AUGUST">Srpen</option>
+                    <option value="SEPTEMBER">Září</option>
+                    <option value="OCTOBER">Říjen</option>
+                    <option value="NOVEMBER">Listopad</option>
+                    <option value="DECEMBER">Prosinec</option>
+
+
+                </select>
+            </div>
+
+            <div class="rostliny">
+                <fieldset>
+                    <legend>Vyber rostlinu</legend>
+
+                    <input type="radio" id="zelenina" name="typPlodiny" value="zelenina" checked>
+                    <!-- ve výchozím stavu checked zvolená varianta -->
+                    <label for="zelenina">Zelenina</label>
+
+
+                    <input type="radio" id="kvetina" name="typPlodiny" value="kytka">
+                    <label for="kvetina">Květina</label>
+
+
+                </fieldset>
+
+            </div>
+
+            <div class="barvy">
+                <fieldset>
+                    <legend>Barva květin</legend>
+
+
+                    <input type="checkbox" id="cervena" name="barva" value="cervena">
+
+                    <label for="cervena">Červená
+                        
+                    </label>
+
+
+
+
+                   
+                        <input type="checkbox" id="bila" name="barva" value="bila">
+                        <label for="bila">Bílá</label>
+                    
+
+              
+                        <input type="checkbox" id="zluta" name="barva" value="zluta">
+                        <label for="zluta">Žlutá</label>
+                 
+
+
+                        <input type="checkbox" id="fialova" name="barva" value="fialova">
+                        <label for="fialova">Fialová</label>
+              
+
+
+
+                </fieldset>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <input type="submit" class="tlacitko"></input>
+
+        </div>
+
+
+
+    
+
+    </div>
+    </form>
+    <div class="pestovani">
+    <button onclick="zobrazNavod()" id="tlacitko">Návod na pěstování</button> 
+    <div class="navod schovej">
+
+       
+        <strong>Návod na pěstování by Vám měl poskytnout cenné rady jak ke správné výsadbě, tak i k další nutné péči o rostliny.</strong>
+        
+        <p> I rostliny jsou živé, proto potřebují stejně jako lidé nebo zvířata ošetřování a péči. 
+        Jak postupovat po převzetí rostlin. Máme-li možnost, ihned sázíme. Když to není uskutečnitelné, vybalíme rostliny ihned po obdržení na stinném, proti větru chráněném místě.
+        Jen výjimečně, dojde-li zásilka za mrazivého počasí, přeneseme neotevřený balík na chladné, ale mrazuprosté místo (např. sklep), aby se rostliny mohly pomalu aklimatizovat. Teprve potom je vybalíme. Tímto způsobem předejdeme škodám způsobeným mrazem.</p>
+           
+        <p>Po vybalení v každém případě silně navlhčíme kořeny, nebo ještě lépe: postavíme rostliny na nějakou dobu do vody, aby se opět mohly plně nasáknout. I rostliny se zemním balem by se měly před vysázením na nějaký čas postavit do vody, aby  jejich zemní bal řádně nasákl. Opomeneme-li to udělat, může dojít až ke ztrátě rostliny. Suchý zemní bal totiž přijímá po vysázení vlhkost jen velmi těžce. 
+        Vzniká tak nebezpečí, že rostlina navzdory silnému zalití či dostatečným vodním srážkám uschne a zajde.  
+        Jestliže nemůžeme sázet v průběhu 3 až 4 dní, musíme všechny dřeviny a také růže, které nebyly dodány v květináčích, založit. Vykopeme asi 30 cm hlubokou rýhu, do které šikmo vložíme kořeny a část  kmene a přihrneme zeminou. Pak vydatně zalijeme.</p>
+       
+    
+        <p>Pozor! Kořeny rostlin nesmí nikdy zaschnout!
+        Nezapomínejme, že vyschnutí, průvan, vysoké teploty a dlouhá doba skladování jsou největšími nepřáteli dobrého vzrůstu. Čím rychleji se dostane rostlina do půdy, tím lépe. Je-li půda ještě zmrzlá, není  sázení nebo založení možné.
+        V tomto případě musíme navrstvit na chráněném, světlém a mrazuprostém místě vlhkou rašelinu, rostliny do ní založit a trvale udržovat vlhké.
+        U trvalek se často stává, že v období klidu jsou veškeré nadzemní části rostlin odumřelé. Může se také stát, že rostliny dodané na podzim, mají suché listy. Tyto rostliny jsou ale živé! Zasadíme je podle návodu a na jaře nám všechny znovu vyraší.</p>
+    
+        
+        <p>Balkonové květiny a letničky jako pelargonie, surfinie atd. mohou mít při obdržení zásilky pomačkané, zažloutlé nebo suché listy. To ovšem rostliny se brzy zotaví a opět vytvoří nové listy. Tyto balkonové květiny nejsou odolné vůči zimě a měly by být až do poloviny května ponechány doma nebo je můžeme při mírném jarním počasí dát přes den ven, aby se otužily, a jen na noc přenést dovnitř.
+        Květinové cibule po obdržení ihned vybalíme a uložíme na suchém, vzdušném, mrazuprostém, ale ne slunném místě. K cibulím by měl proudit vzduch, aby mohly dýchat, neboť i cibule a hlízy jsou živé, jen se nacházejí v klidovém stádiu.
+        Rostliny  v  nádobách z umělé  hmoty, tzv.  kontejnerované rostliny, se mohou sázet v kteroukoliv roční dobu za předpokladu, že jsou v nádobě dobře zakořeněny. Při sázení samozřejmě nádobu odstraníme. Toto je často možné provést jen tak, že nádobu rozstříháme nůžkami na jednotlivé části.</p>
+        Budete-li se řídit těmito prvními důležitými body, už tím vytvoříte dobrý základ pro dlouhý a solidní život svých rostlin.
+    </div>
+</div>
+
+</body>
+<script th:src="${'main.js'}"></script>
+
+</html>

@@ -1,75 +1,121 @@
-
 html {
     box-sizing: border-box;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Modern Antiqua', cursive;
 }
 
 *,
 ::after,
 ::before {
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
+
 a {
     text-decoration: none;
-    color: red;
+    color: white;
 }
 
 .hlavicka {
-    display:grid; 
-	grid-template-columns:[levy-start] auto [levy-end obsah-start]4fr[obsah-end pravy-start] auto [pravy-end]; 
-    grid-gap:40px; 
+    text-align: center;
     align-items: center;
+    padding-bottom: 20px;
+    background-image: url("../images/hlavicka.jpg");
+    min-height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows: 80px 150px 80px; */
+    grid-template-areas: 'hlavicka hlavicka' 'dnes tlacitko' 'sazet sazet';
+    /* grid-gap: 40px; */
+    align-items: center;
+    overflow: hidden;
+}
+
+.dnes {
+    grid-area: dnes;
+    margin: 0;
+    justify-self: left;
+}
+
+.sazet {
+    grid-area: sazet;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: lowercase;
+    padding-top: 30px;
+    text-decoration-line: underline;
 }
 
 p {
-    grid-column: levy-start/levy-end;
-     font-size: 24px;
-    color: red;
-
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
 }
+
 h1 {
-    grid-column: obsah-start/obsah-end; 
-   
     text-align: center;
-    font-size: 46px;
-    color: red;
-} 
+    font-size: 70px;
+    color: white;
+    grid-area: hlavicka;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
 .tlacitko {
-    grid-column: pravy-start/pravy-end;
-    font-size: 30px;
-	font-weight: bold;
-	color:white;
-	text-decoration: none;
-	text-align: center;
-	padding: 10px 20px;
-    background-color:rgb(250, 221, 56);
-    border-radius: 20px;
+    grid-area: tlacitko;
+    margin: 0;
+    width: 60%;
+    padding: 0 30px 0 30px;
+    justify-self: right;
+    font-size: 20px;
+    font-family: 'Modern Antiqua', cursive;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+    border-radius: 3px;
 }
 
 .tlacitko:active {
-	top: 3px;
+    top: 3px;
     box-shadow: 0px 2px 0px 0px rgb(190, 114, 59), 0px 5px 3px #999;
- 
 }
-
 
 ul {
-    display: flex;
-	flex-wrap: wrap;
-}
- li {
-     flex: 1 1 33.333%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
     margin: 0;
-background-color: white;
-padding: 2px;
-box-shadow: 0 2px 5px (0,0,0,0.3);
-border-radius: 3px;
-list-style: none;
-text-align: center;
- }
- img {
- width: 100%; 
- background-size: cover;
- background-repeat: no-repeat;
- background-position: center;
-} 
+    background-color: #e5e5e5;
+    padding: 10px;
+    box-shadow: 0 2px 5px (0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+li {
+    margin: 0;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}

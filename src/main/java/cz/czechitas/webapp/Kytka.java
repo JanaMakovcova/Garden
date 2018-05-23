@@ -4,22 +4,23 @@ import java.time.*;
 
 public class Kytka extends Plodina {
 
-    private Integer barva;
+    private String barva;
 
     public Kytka () {
 
     }
     
-    public Kytka(Long id, String nazev, String obrazek, Month zacatekSazeni, Month konecSazeni, int dobaRustu, Month zacatekSlizne, Month koncecSklizne, Integer barva) {
-        super(id, nazev, obrazek, zacatekSazeni, konecSazeni, dobaRustu, zacatekSlizne, koncecSklizne);
+    public Kytka(Long id, String typPlodiny, String nazev, String obrazek, Month zacatekSazeni, Month konecSazeni, int dobaRustu, Month zacatekSlizne, Month koncecSklizne, String barva) {
+        super(id, typPlodiny, nazev, obrazek, zacatekSazeni, konecSazeni, dobaRustu, zacatekSlizne, koncecSklizne);
         this.barva = barva;
     }
 
-    public Integer getBarva() {
+    
+    public String getBarva() {
         return barva;
     }
 
-    public void setBarva(Integer newValue) {
+    public void setBarva(String newValue) {
         barva = newValue;
     }
 }

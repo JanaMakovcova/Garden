@@ -8,10 +8,16 @@ public class PlodinaRepository {
 
 
     private List<Plodina> seznamPlodin = new ArrayList<>(Arrays.asList(
-            new Plodina(1L, "Dýně", "dyne", Month.APRIL, Month.MAY, 90, Month.SEPTEMBER, Month.OCTOBER),
-            new Kytka(2L, "Kdoulovec", "kdoulovec", Month.MARCH, Month.JUNE, 60, Month.SEPTEMBER, Month.OCTOBER, 1),
-            new Kytka(3L, "Koukol", "koukol", Month.JUNE, Month.JULY, 70, Month.AUGUST, Month.SEPTEMBER, 2),
-            new Plodina(4L, "Meloun", "meloun", Month.MARCH, Month.APRIL, 120, Month.AUGUST, Month.NOVEMBER)
+            new Plodina(1L, "zelenina","Dýně", "dyne", Month.APRIL, Month.MAY, 90, Month.SEPTEMBER, Month.OCTOBER),
+            new Kytka(2L, "kytka", "Kdoulovec", "kdoulovec", Month.MARCH, Month.JUNE, 60, Month.SEPTEMBER, Month.OCTOBER, "cervena"),
+            new Kytka(3L, "kytka", "Koukol", "koukol", Month.JUNE, Month.JULY, 70, Month.AUGUST, Month.SEPTEMBER, "fialova"),
+            new Plodina(4L, "zelenina", "Meloun", "meloun", Month.MARCH, Month.APRIL, 120, Month.AUGUST, Month.NOVEMBER),
+            new Plodina(5L, "zelenina","Lilek", "lilek", Month.FEBRUARY, Month.MARCH, 150, Month.JULY, Month.NOVEMBER),
+            new Kytka(6L, "kytka", "Slunečnice", "slunecnice", Month.APRIL, Month.MAY, 90, Month.JULY, Month.NOVEMBER, "zluta"),
+            new Plodina(7L, "zelenina", "Petržel", "petrzel", Month.MARCH, Month.MAY, 150, Month.JUNE, Month.OCTOBER),
+            new Kytka(8L, "kytka", "Růže", "ruze", Month.MARCH, Month.MAY, 60, Month.JUNE, Month.SEPTEMBER, "cervena"),
+            new Plodina(9L, "zelenina", "Rajče", "rajce", Month.MAY, Month.JUNE, 60, Month.JULY, Month.SEPTEMBER),
+            new Kytka(10L, "kytka", "Sněženka","snezenka", Month.SEPTEMBER, Month.OCTOBER, 210, Month.MARCH, Month.MARCH, "bila" )
     ));
 
     public synchronized List<Plodina> findAll() {
@@ -48,6 +54,7 @@ public class PlodinaRepository {
     private Plodina clone(Plodina puvodni) {
         return new Plodina(
                 puvodni.getId(),
+                puvodni.getTypPlodiny(),
                 puvodni.getNazev(),
                 puvodni.getObrazek(),
                 puvodni.getZacatekSazeni(),
